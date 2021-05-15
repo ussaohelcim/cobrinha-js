@@ -25,7 +25,7 @@ imgComida.src = "sprites/OVO.gif";
 let imgRato = new Image();
 imgRato.src = "sprites/RATO.gif"
 
-let direcao = "up";
+let direcao;
 
 document.addEventListener("keydown",checkDirecao);
 

@@ -4,6 +4,16 @@ ctx.font = '20px serif';
 let box = 20;
 let cobra = [];
 let pontos = 0;
+let HighScore =0;
+if(localStorage.length>0)
+{
+    HighScore = localStorage.getItem("highscore")
+}
+else
+{
+    localStorage.setItem("highscore","0")
+}
+
 
 cobra[0] = {
     x : 10 * box,
@@ -119,6 +129,13 @@ function render()
     {
         clearInterval(update)
         console.log("aa")
+        //morreu
+        if(pontos > HighScore)
+        {
+            HighScore = pontos;
+            localStorage.setItem("highscore",HighScore)
+        } 
+        
     }
     cobra.unshift(novaCabeça)//coloca no inicio do vetor
     /*
@@ -180,7 +197,7 @@ function sumirRato()
 function renderScore()
 {
     ctx.fillStyle = "black";
-    ctx.fillText("Pontos: "+pontos, 1, 20);
+    ctx.fillText("Pontos: "+pontos+" Highscore: "+HighScore, 1, 20);
 }
 function renderOvo()
 {

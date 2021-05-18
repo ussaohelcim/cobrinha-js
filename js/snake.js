@@ -80,13 +80,11 @@ function render()
     }
     //console.log(direcao)
     
-
     for(let i = 0; i < cobra.length; i++)
     {
-        ctx.fillStyle = (i == 0) ? "#007700" : "#00BB00"
+        ctx.fillStyle = (i == 0) ? "#009B00" : "#00BB00"
         ctx.fillRect(cobra[i].x,cobra[i].y,box,box);
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(cobra[i].x,cobra[i].y,box,box);        
+               
     }
 
     //ctx.fillStyle = "green";
